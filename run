@@ -7,4 +7,4 @@ sudo docker compose --build
 sudo docker compose build
 sudo docker compose up
 
-echo "Done"
+echo "Everything is done"
