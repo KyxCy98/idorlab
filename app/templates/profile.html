@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Employee Portal</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .container { max-width: 500px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+        .flag { background: #ffffcc; padding: 10px; margin-top: 10px; border-left: 5px solid gold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Profile Karyawan</h2>
+        <p><strong>ID:</strong> {{ user.id }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Nama Lengkap:</strong> {{ user.fullname }}</p>
+        <p><strong>Role:</strong> {{ user.role }}</p>
+        
+        {% if user.flag %}
+            <div class="flag">
+                <strong>🌟 Flag ditemukan:</strong> {{ user.flag }}
+            </div>
+        {% endif %}
+        
+        <hr>
+        <a href="/profile/{{ current_user_id }}">Lihat profil saya</a> |
+        <a href="/logout">Logout</a>
+        
+        <p><small>Tips: Coba ubah ID di URL!</small></p>
+    </div>
+</body>
+</html>

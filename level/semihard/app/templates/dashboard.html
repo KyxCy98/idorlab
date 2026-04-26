@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body style="font-family: Arial; margin: 40px;">
+    <h2>Welcome, {{ session.username }}</h2>
+    <h3>Your Documents</h3>
+    <ul>
+        {% for doc in documents %}
+            <li>
+                <a href="/document/{{ encode_id(doc.id) }}">{{ doc.title }}</a>
+                {% if doc.is_secret %} 🔒 SECRET {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/logout">Logout</a></p>
+    <hr>
+    <p><em>Hint: Coba eksplorasi endpoint /api/users dan /debug/config</em></p>
+</body>
+</html>

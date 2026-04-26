@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  idor-lab-advanced:
+    build: .
+    ports:
+      - "8080:5000"
+    restart: unless-stopped
