@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git clone https://github.com/KyxCy98/idorlab
+cd idorlab
 sudo docker compose down
 sudo docker compose --build
 sudo docker compose build
